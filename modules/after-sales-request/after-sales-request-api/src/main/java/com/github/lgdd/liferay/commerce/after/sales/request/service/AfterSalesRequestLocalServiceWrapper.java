@@ -54,6 +54,19 @@ public class AfterSalesRequestLocalServiceWrapper
 			afterSalesRequest);
 	}
 
+	@Override
+	public
+		com.github.lgdd.liferay.commerce.after.sales.request.model.
+			AfterSalesRequest addAfterSalesRequest(
+					String title, String description,
+					com.liferay.portal.kernel.service.ServiceContext
+						serviceContext)
+				throws com.liferay.portal.kernel.exception.PortalException {
+
+		return _afterSalesRequestLocalService.addAfterSalesRequest(
+			title, description, serviceContext);
+	}
+
 	/**
 	 * Creates a new after sales request with the primary key. Does not add the after sales request to the database.
 	 *
@@ -436,6 +449,34 @@ public class AfterSalesRequestLocalServiceWrapper
 
 		return _afterSalesRequestLocalService.updateAfterSalesRequest(
 			afterSalesRequest);
+	}
+
+	@Override
+	public
+		com.github.lgdd.liferay.commerce.after.sales.request.model.
+			AfterSalesRequest updateAfterSalesRequest(
+					long afterSalesRequestId, String title, String description,
+					java.util.Date dueDate,
+					com.liferay.portal.kernel.service.ServiceContext
+						serviceContext)
+				throws com.liferay.portal.kernel.exception.PortalException {
+
+		return _afterSalesRequestLocalService.updateAfterSalesRequest(
+			afterSalesRequestId, title, description, dueDate, serviceContext);
+	}
+
+	@Override
+	public
+		com.github.lgdd.liferay.commerce.after.sales.request.model.
+			AfterSalesRequest updateStatus(
+					long userId, long afterSalesRequestId, int status,
+					com.liferay.portal.kernel.service.ServiceContext
+						serviceContext)
+				throws com.liferay.portal.kernel.exception.PortalException,
+					   com.liferay.portal.kernel.exception.SystemException {
+
+		return _afterSalesRequestLocalService.updateStatus(
+			userId, afterSalesRequestId, status, serviceContext);
 	}
 
 	@Override

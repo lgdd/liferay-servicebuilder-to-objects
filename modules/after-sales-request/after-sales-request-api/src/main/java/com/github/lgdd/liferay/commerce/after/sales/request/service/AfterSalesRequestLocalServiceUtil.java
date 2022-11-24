@@ -19,6 +19,7 @@ import com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequ
 import com.liferay.petra.sql.dsl.query.DSLQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.model.PersistedModel;
 import com.liferay.portal.kernel.util.OrderByComparator;
 
@@ -60,6 +61,15 @@ public class AfterSalesRequestLocalServiceUtil {
 		AfterSalesRequest afterSalesRequest) {
 
 		return getService().addAfterSalesRequest(afterSalesRequest);
+	}
+
+	public static AfterSalesRequest addAfterSalesRequest(
+			String title, String description,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws PortalException {
+
+		return getService().addAfterSalesRequest(
+			title, description, serviceContext);
 	}
 
 	/**
@@ -374,6 +384,25 @@ public class AfterSalesRequestLocalServiceUtil {
 		AfterSalesRequest afterSalesRequest) {
 
 		return getService().updateAfterSalesRequest(afterSalesRequest);
+	}
+
+	public static AfterSalesRequest updateAfterSalesRequest(
+			long afterSalesRequestId, String title, String description,
+			java.util.Date dueDate,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws PortalException {
+
+		return getService().updateAfterSalesRequest(
+			afterSalesRequestId, title, description, dueDate, serviceContext);
+	}
+
+	public static AfterSalesRequest updateStatus(
+			long userId, long afterSalesRequestId, int status,
+			com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws PortalException, SystemException {
+
+		return getService().updateStatus(
+			userId, afterSalesRequestId, status, serviceContext);
 	}
 
 	public static AfterSalesRequestLocalService getService() {

@@ -30,6 +30,7 @@ import com.liferay.portal.kernel.search.Indexable;
 import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.service.BaseLocalService;
 import com.liferay.portal.kernel.service.PersistedModelLocalService;
+import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -37,6 +38,7 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 
 import java.io.Serializable;
 
+import java.util.Date;
 import java.util.List;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -78,6 +80,11 @@ public interface AfterSalesRequestLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public AfterSalesRequest addAfterSalesRequest(
 		AfterSalesRequest afterSalesRequest);
+
+	@Indexable(type = IndexableType.REINDEX)
+	public AfterSalesRequest addAfterSalesRequest(
+			String title, String description, ServiceContext serviceContext)
+		throws PortalException;
 
 	/**
 	 * Creates a new after sales request with the primary key. Does not add the after sales request to the database.
@@ -326,5 +333,16 @@ public interface AfterSalesRequestLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public AfterSalesRequest updateAfterSalesRequest(
 		AfterSalesRequest afterSalesRequest);
+
+	@Indexable(type = IndexableType.REINDEX)
+	public AfterSalesRequest updateAfterSalesRequest(
+			long afterSalesRequestId, String title, String description,
+			Date dueDate, ServiceContext serviceContext)
+		throws PortalException;
+
+	public AfterSalesRequest updateStatus(
+			long userId, long afterSalesRequestId, int status,
+			ServiceContext serviceContext)
+		throws PortalException, SystemException;
 
 }

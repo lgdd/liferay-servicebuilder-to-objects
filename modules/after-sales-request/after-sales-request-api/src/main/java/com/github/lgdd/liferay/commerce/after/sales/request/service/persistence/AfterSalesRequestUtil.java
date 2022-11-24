@@ -696,6 +696,74 @@ public class AfterSalesRequestUtil {
 	}
 
 	/**
+	 * Returns all the after sales requests that the user has permission to view where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByGroupId(long groupId) {
+		return getPersistence().filterFindByGroupId(groupId);
+	}
+
+	/**
+	 * Returns a range of all the after sales requests that the user has permission to view where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AfterSalesRequestModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of after sales requests
+	 * @param end the upper bound of the range of after sales requests (not inclusive)
+	 * @return the range of matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByGroupId(
+		long groupId, int start, int end) {
+
+		return getPersistence().filterFindByGroupId(groupId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the after sales requests that the user has permissions to view where groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AfterSalesRequestModelImpl</code>.
+	 * </p>
+	 *
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of after sales requests
+	 * @param end the upper bound of the range of after sales requests (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByGroupId(
+		long groupId, int start, int end,
+		OrderByComparator<AfterSalesRequest> orderByComparator) {
+
+		return getPersistence().filterFindByGroupId(
+			groupId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns the after sales requests before and after the current after sales request in the ordered set of after sales requests that the user has permission to view where groupId = &#63;.
+	 *
+	 * @param afterSalesRequestId the primary key of the current after sales request
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next after sales request
+	 * @throws NoSuchAfterSalesRequestException if a after sales request with the primary key could not be found
+	 */
+	public static AfterSalesRequest[] filterFindByGroupId_PrevAndNext(
+			long afterSalesRequestId, long groupId,
+			OrderByComparator<AfterSalesRequest> orderByComparator)
+		throws com.github.lgdd.liferay.commerce.after.sales.request.exception.
+			NoSuchAfterSalesRequestException {
+
+		return getPersistence().filterFindByGroupId_PrevAndNext(
+			afterSalesRequestId, groupId, orderByComparator);
+	}
+
+	/**
 	 * Removes all the after sales requests where groupId = &#63; from the database.
 	 *
 	 * @param groupId the group ID
@@ -712,6 +780,16 @@ public class AfterSalesRequestUtil {
 	 */
 	public static int countByGroupId(long groupId) {
 		return getPersistence().countByGroupId(groupId);
+	}
+
+	/**
+	 * Returns the number of after sales requests that the user has permission to view where groupId = &#63;.
+	 *
+	 * @param groupId the group ID
+	 * @return the number of matching after sales requests that the user has permission to view
+	 */
+	public static int filterCountByGroupId(long groupId) {
+		return getPersistence().filterCountByGroupId(groupId);
 	}
 
 	/**
@@ -1049,6 +1127,80 @@ public class AfterSalesRequestUtil {
 	}
 
 	/**
+	 * Returns all the after sales requests that the user has permission to view where status = &#63; and groupId = &#63;.
+	 *
+	 * @param status the status
+	 * @param groupId the group ID
+	 * @return the matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByG_S(
+		int status, long groupId) {
+
+		return getPersistence().filterFindByG_S(status, groupId);
+	}
+
+	/**
+	 * Returns a range of all the after sales requests that the user has permission to view where status = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AfterSalesRequestModelImpl</code>.
+	 * </p>
+	 *
+	 * @param status the status
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of after sales requests
+	 * @param end the upper bound of the range of after sales requests (not inclusive)
+	 * @return the range of matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByG_S(
+		int status, long groupId, int start, int end) {
+
+		return getPersistence().filterFindByG_S(status, groupId, start, end);
+	}
+
+	/**
+	 * Returns an ordered range of all the after sales requests that the user has permissions to view where status = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to <code>QueryUtil#ALL_POS</code> will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent, then the query will include the default ORDER BY logic from <code>AfterSalesRequestModelImpl</code>.
+	 * </p>
+	 *
+	 * @param status the status
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of after sales requests
+	 * @param end the upper bound of the range of after sales requests (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching after sales requests that the user has permission to view
+	 */
+	public static List<AfterSalesRequest> filterFindByG_S(
+		int status, long groupId, int start, int end,
+		OrderByComparator<AfterSalesRequest> orderByComparator) {
+
+		return getPersistence().filterFindByG_S(
+			status, groupId, start, end, orderByComparator);
+	}
+
+	/**
+	 * Returns the after sales requests before and after the current after sales request in the ordered set of after sales requests that the user has permission to view where status = &#63; and groupId = &#63;.
+	 *
+	 * @param afterSalesRequestId the primary key of the current after sales request
+	 * @param status the status
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next after sales request
+	 * @throws NoSuchAfterSalesRequestException if a after sales request with the primary key could not be found
+	 */
+	public static AfterSalesRequest[] filterFindByG_S_PrevAndNext(
+			long afterSalesRequestId, int status, long groupId,
+			OrderByComparator<AfterSalesRequest> orderByComparator)
+		throws com.github.lgdd.liferay.commerce.after.sales.request.exception.
+			NoSuchAfterSalesRequestException {
+
+		return getPersistence().filterFindByG_S_PrevAndNext(
+			afterSalesRequestId, status, groupId, orderByComparator);
+	}
+
+	/**
 	 * Removes all the after sales requests where status = &#63; and groupId = &#63; from the database.
 	 *
 	 * @param status the status
@@ -1067,6 +1219,17 @@ public class AfterSalesRequestUtil {
 	 */
 	public static int countByG_S(int status, long groupId) {
 		return getPersistence().countByG_S(status, groupId);
+	}
+
+	/**
+	 * Returns the number of after sales requests that the user has permission to view where status = &#63; and groupId = &#63;.
+	 *
+	 * @param status the status
+	 * @param groupId the group ID
+	 * @return the number of matching after sales requests that the user has permission to view
+	 */
+	public static int filterCountByG_S(int status, long groupId) {
+		return getPersistence().filterCountByG_S(status, groupId);
 	}
 
 	/**
