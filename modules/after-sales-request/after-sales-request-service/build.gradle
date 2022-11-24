@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:after-sales-request:after-sales-request-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../after-sales-request-api/src/main/java"
+}
+
+group = "after-sales-request"

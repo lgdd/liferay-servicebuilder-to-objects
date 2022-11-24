@@ -1,0 +1,10 @@
+Bundle-Name: /dev/24 - AfterSalesRequest API
+Bundle-SymbolicName: com.github.lgdd.liferay.commerce.after.sales.request.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.github.lgdd.liferay.commerce.after.sales.request.exception,\
+	com.github.lgdd.liferay.commerce.after.sales.request.model,\
+	com.github.lgdd.liferay.commerce.after.sales.request.service,\
+	com.github.lgdd.liferay.commerce.after.sales.request.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../after-sales-request-service/service.xml
