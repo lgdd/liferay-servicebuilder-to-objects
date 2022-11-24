@@ -1,3 +1,4 @@
+**/*.liferay-pid
 **/*.iml
 **/.ivy
 **/.classpath
