@@ -37,13 +37,13 @@ public class AfterSalesRequestServiceWrapper
 	public
 		com.github.lgdd.liferay.commerce.after.sales.request.model.
 			AfterSalesRequest addAfterSalesRequest(
-					String title, String description,
+					String title, String description, long commerceOrderId,
 					com.liferay.portal.kernel.service.ServiceContext
 						serviceContext)
 				throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _afterSalesRequestService.addAfterSalesRequest(
-			title, description, serviceContext);
+			title, description, commerceOrderId, serviceContext);
 	}
 
 	@Override

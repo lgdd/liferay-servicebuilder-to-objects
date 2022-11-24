@@ -57,6 +57,7 @@ public class AfterSalesRequestWrapper
 		attributes.put("statusDate", getStatusDate());
 		attributes.put("title", getTitle());
 		attributes.put("description", getDescription());
+		attributes.put("commerceOrderId", getCommerceOrderId());
 
 		return attributes;
 	}
@@ -146,6 +147,12 @@ public class AfterSalesRequestWrapper
 		if (description != null) {
 			setDescription(description);
 		}
+
+		Long commerceOrderId = (Long)attributes.get("commerceOrderId");
+
+		if (commerceOrderId != null) {
+			setCommerceOrderId(commerceOrderId);
+		}
 	}
 
 	@Override
@@ -161,6 +168,16 @@ public class AfterSalesRequestWrapper
 	@Override
 	public long getAfterSalesRequestId() {
 		return model.getAfterSalesRequestId();
+	}
+
+	/**
+	 * Returns the commerce order ID of this after sales request.
+	 *
+	 * @return the commerce order ID of this after sales request
+	 */
+	@Override
+	public long getCommerceOrderId() {
+		return model.getCommerceOrderId();
 	}
 
 	/**
@@ -416,6 +433,16 @@ public class AfterSalesRequestWrapper
 	@Override
 	public void setAfterSalesRequestId(long afterSalesRequestId) {
 		model.setAfterSalesRequestId(afterSalesRequestId);
+	}
+
+	/**
+	 * Sets the commerce order ID of this after sales request.
+	 *
+	 * @param commerceOrderId the commerce order ID of this after sales request
+	 */
+	@Override
+	public void setCommerceOrderId(long commerceOrderId) {
+		model.setCommerceOrderId(commerceOrderId);
 	}
 
 	/**

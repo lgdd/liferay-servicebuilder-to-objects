@@ -38,12 +38,12 @@ public class AfterSalesRequestServiceUtil {
 	 * Never modify this class directly. Add custom service methods to <code>com.github.lgdd.liferay.commerce.after.sales.request.service.impl.AfterSalesRequestServiceImpl</code> and rerun ServiceBuilder to regenerate this class.
 	 */
 	public static AfterSalesRequest addAfterSalesRequest(
-			String title, String description,
+			String title, String description, long commerceOrderId,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws PortalException {
 
 		return getService().addAfterSalesRequest(
-			title, description, serviceContext);
+			title, description, commerceOrderId, serviceContext);
 	}
 
 	public static AfterSalesRequest deleteAfterSalesRequest(

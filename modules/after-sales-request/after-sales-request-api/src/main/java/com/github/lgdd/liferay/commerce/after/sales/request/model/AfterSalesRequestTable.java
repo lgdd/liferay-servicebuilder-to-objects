@@ -68,6 +68,9 @@ public class AfterSalesRequestTable extends BaseTable<AfterSalesRequestTable> {
 	public final Column<AfterSalesRequestTable, String> description =
 		createColumn(
 			"description", String.class, Types.VARCHAR, Column.FLAG_DEFAULT);
+	public final Column<AfterSalesRequestTable, Long> commerceOrderId =
+		createColumn(
+			"commerceOrderId", Long.class, Types.BIGINT, Column.FLAG_DEFAULT);
 
 	private AfterSalesRequestTable() {
 		super("DEV24_AfterSalesRequest", AfterSalesRequestTable::new);

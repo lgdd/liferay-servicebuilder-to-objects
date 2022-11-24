@@ -65,7 +65,7 @@ public class AfterSalesRequestCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -95,6 +95,8 @@ public class AfterSalesRequestCacheModel
 		sb.append(title);
 		sb.append(", description=");
 		sb.append(description);
+		sb.append(", commerceOrderId=");
+		sb.append(commerceOrderId);
 		sb.append("}");
 
 		return sb.toString();
@@ -169,6 +171,8 @@ public class AfterSalesRequestCacheModel
 			afterSalesRequestImpl.setDescription(description);
 		}
 
+		afterSalesRequestImpl.setCommerceOrderId(commerceOrderId);
+
 		afterSalesRequestImpl.resetOriginalValues();
 
 		return afterSalesRequestImpl;
@@ -196,6 +200,8 @@ public class AfterSalesRequestCacheModel
 		statusDate = objectInput.readLong();
 		title = objectInput.readUTF();
 		description = objectInput.readUTF();
+
+		commerceOrderId = objectInput.readLong();
 	}
 
 	@Override
@@ -251,6 +257,8 @@ public class AfterSalesRequestCacheModel
 		else {
 			objectOutput.writeUTF(description);
 		}
+
+		objectOutput.writeLong(commerceOrderId);
 	}
 
 	public String uuid;
@@ -267,5 +275,6 @@ public class AfterSalesRequestCacheModel
 	public long statusDate;
 	public String title;
 	public String description;
+	public long commerceOrderId;
 
 }

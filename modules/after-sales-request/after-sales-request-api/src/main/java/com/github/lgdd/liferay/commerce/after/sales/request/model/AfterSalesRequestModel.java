@@ -317,6 +317,20 @@ public interface AfterSalesRequestModel
 	public void setDescription(String description);
 
 	/**
+	 * Returns the commerce order ID of this after sales request.
+	 *
+	 * @return the commerce order ID of this after sales request
+	 */
+	public long getCommerceOrderId();
+
+	/**
+	 * Sets the commerce order ID of this after sales request.
+	 *
+	 * @param commerceOrderId the commerce order ID of this after sales request
+	 */
+	public void setCommerceOrderId(long commerceOrderId);
+
+	/**
 	 * Returns <code>true</code> if this after sales request is approved.
 	 *
 	 * @return <code>true</code> if this after sales request is approved; <code>false</code> otherwise

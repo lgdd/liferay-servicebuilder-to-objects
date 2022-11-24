@@ -66,7 +66,7 @@ public class AfterSalesRequestServiceSoap {
 
 	public static com.github.lgdd.liferay.commerce.after.sales.request.model.
 		AfterSalesRequestSoap addAfterSalesRequest(
-				String title, String description,
+				String title, String description, long commerceOrderId,
 				com.liferay.portal.kernel.service.ServiceContext serviceContext)
 			throws RemoteException {
 
@@ -74,7 +74,7 @@ public class AfterSalesRequestServiceSoap {
 			com.github.lgdd.liferay.commerce.after.sales.request.model.
 				AfterSalesRequest returnValue =
 					AfterSalesRequestServiceUtil.addAfterSalesRequest(
-						title, description, serviceContext);
+						title, description, commerceOrderId, serviceContext);
 
 			return com.github.lgdd.liferay.commerce.after.sales.request.model.
 				AfterSalesRequestSoap.toSoapModel(returnValue);

@@ -64,12 +64,12 @@ public class AfterSalesRequestLocalServiceUtil {
 	}
 
 	public static AfterSalesRequest addAfterSalesRequest(
-			String title, String description,
+			String title, String description, long commerceOrderId,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws PortalException {
 
 		return getService().addAfterSalesRequest(
-			title, description, serviceContext);
+			title, description, commerceOrderId, serviceContext);
 	}
 
 	/**
@@ -388,12 +388,13 @@ public class AfterSalesRequestLocalServiceUtil {
 
 	public static AfterSalesRequest updateAfterSalesRequest(
 			long afterSalesRequestId, String title, String description,
-			java.util.Date dueDate,
+			long commerceOrderId,
 			com.liferay.portal.kernel.service.ServiceContext serviceContext)
 		throws PortalException {
 
 		return getService().updateAfterSalesRequest(
-			afterSalesRequestId, title, description, dueDate, serviceContext);
+			afterSalesRequestId, title, description, commerceOrderId,
+			serviceContext);
 	}
 
 	public static AfterSalesRequest updateStatus(

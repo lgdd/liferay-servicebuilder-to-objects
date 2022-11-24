@@ -31,6 +31,9 @@
     <column name="title" type="String"/>
     <column name="description" type="String"/>
 
+    <!-- Relationship field -->
+    <column name="commerceOrderId" type="long" />
+
     <!-- Order -->
     <order by="asc">
       <order-column name="title"/>

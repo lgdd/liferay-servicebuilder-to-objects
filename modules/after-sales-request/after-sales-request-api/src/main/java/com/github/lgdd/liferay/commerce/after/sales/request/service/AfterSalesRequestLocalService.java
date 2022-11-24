@@ -38,7 +38,6 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 
 import java.io.Serializable;
 
-import java.util.Date;
 import java.util.List;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -83,7 +82,8 @@ public interface AfterSalesRequestLocalService
 
 	@Indexable(type = IndexableType.REINDEX)
 	public AfterSalesRequest addAfterSalesRequest(
-			String title, String description, ServiceContext serviceContext)
+			String title, String description, long commerceOrderId,
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	/**
@@ -337,7 +337,7 @@ public interface AfterSalesRequestLocalService
 	@Indexable(type = IndexableType.REINDEX)
 	public AfterSalesRequest updateAfterSalesRequest(
 			long afterSalesRequestId, String title, String description,
-			Date dueDate, ServiceContext serviceContext)
+			long commerceOrderId, ServiceContext serviceContext)
 		throws PortalException;
 
 	public AfterSalesRequest updateStatus(

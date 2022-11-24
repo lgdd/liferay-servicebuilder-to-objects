@@ -85,7 +85,8 @@ public class AfterSalesRequestModelImpl
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"status", Types.INTEGER}, {"statusByUserId", Types.BIGINT},
 		{"statusByUserName", Types.VARCHAR}, {"statusDate", Types.TIMESTAMP},
-		{"title", Types.VARCHAR}, {"description", Types.VARCHAR}
+		{"title", Types.VARCHAR}, {"description", Types.VARCHAR},
+		{"commerceOrderId", Types.BIGINT}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -106,10 +107,11 @@ public class AfterSalesRequestModelImpl
 		TABLE_COLUMNS_MAP.put("statusDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("title", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("description", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("commerceOrderId", Types.BIGINT);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table DEV24_AfterSalesRequest (uuid_ VARCHAR(75) null,afterSalesRequestId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,title VARCHAR(75) null,description VARCHAR(75) null)";
+		"create table DEV24_AfterSalesRequest (uuid_ VARCHAR(75) null,afterSalesRequestId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,title VARCHAR(75) null,description VARCHAR(75) null,commerceOrderId LONG)";
 
 	public static final String TABLE_SQL_DROP =
 		"drop table DEV24_AfterSalesRequest";
@@ -200,6 +202,7 @@ public class AfterSalesRequestModelImpl
 		model.setStatusDate(soapModel.getStatusDate());
 		model.setTitle(soapModel.getTitle());
 		model.setDescription(soapModel.getDescription());
+		model.setCommerceOrderId(soapModel.getCommerceOrderId());
 
 		return model;
 	}
@@ -431,6 +434,12 @@ public class AfterSalesRequestModelImpl
 			"description",
 			(BiConsumer<AfterSalesRequest, String>)
 				AfterSalesRequest::setDescription);
+		attributeGetterFunctions.put(
+			"commerceOrderId", AfterSalesRequest::getCommerceOrderId);
+		attributeSetterBiConsumers.put(
+			"commerceOrderId",
+			(BiConsumer<AfterSalesRequest, Long>)
+				AfterSalesRequest::setCommerceOrderId);
 
 		_attributeGetterFunctions = Collections.unmodifiableMap(
 			attributeGetterFunctions);
@@ -749,6 +758,21 @@ public class AfterSalesRequestModelImpl
 		_description = description;
 	}
 
+	@JSON
+	@Override
+	public long getCommerceOrderId() {
+		return _commerceOrderId;
+	}
+
+	@Override
+	public void setCommerceOrderId(long commerceOrderId) {
+		if (_columnOriginalValues == Collections.EMPTY_MAP) {
+			_setColumnOriginalValues();
+		}
+
+		_commerceOrderId = commerceOrderId;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(
@@ -906,6 +930,7 @@ public class AfterSalesRequestModelImpl
 		afterSalesRequestImpl.setStatusDate(getStatusDate());
 		afterSalesRequestImpl.setTitle(getTitle());
 		afterSalesRequestImpl.setDescription(getDescription());
+		afterSalesRequestImpl.setCommerceOrderId(getCommerceOrderId());
 
 		afterSalesRequestImpl.resetOriginalValues();
 
@@ -945,6 +970,8 @@ public class AfterSalesRequestModelImpl
 			this.<String>getColumnOriginalValue("title"));
 		afterSalesRequestImpl.setDescription(
 			this.<String>getColumnOriginalValue("description"));
+		afterSalesRequestImpl.setCommerceOrderId(
+			this.<Long>getColumnOriginalValue("commerceOrderId"));
 
 		return afterSalesRequestImpl;
 	}
@@ -1101,6 +1128,8 @@ public class AfterSalesRequestModelImpl
 			afterSalesRequestCacheModel.description = null;
 		}
 
+		afterSalesRequestCacheModel.commerceOrderId = getCommerceOrderId();
+
 		return afterSalesRequestCacheModel;
 	}
 
@@ -1207,6 +1236,7 @@ public class AfterSalesRequestModelImpl
 	private Date _statusDate;
 	private String _title;
 	private String _description;
+	private long _commerceOrderId;
 
 	public <T> T getColumnValue(String columnName) {
 		columnName = _attributeNames.getOrDefault(columnName, columnName);
@@ -1251,6 +1281,7 @@ public class AfterSalesRequestModelImpl
 		_columnOriginalValues.put("statusDate", _statusDate);
 		_columnOriginalValues.put("title", _title);
 		_columnOriginalValues.put("description", _description);
+		_columnOriginalValues.put("commerceOrderId", _commerceOrderId);
 	}
 
 	private static final Map<String, String> _attributeNames;
@@ -1301,6 +1332,8 @@ public class AfterSalesRequestModelImpl
 		columnBitmasks.put("title", 4096L);
 
 		columnBitmasks.put("description", 8192L);
+
+		columnBitmasks.put("commerceOrderId", 16384L);
 
 		_columnBitmasks = Collections.unmodifiableMap(columnBitmasks);
 	}

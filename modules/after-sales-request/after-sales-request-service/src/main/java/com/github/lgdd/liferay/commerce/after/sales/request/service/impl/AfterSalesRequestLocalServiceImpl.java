@@ -14,10 +14,8 @@ package com.github.lgdd.liferay.commerce.after.sales.request.service.impl;
 
 import com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequest;
 import com.github.lgdd.liferay.commerce.after.sales.request.service.base.AfterSalesRequestLocalServiceBaseImpl;
-
 import com.liferay.petra.string.StringPool;
 import com.liferay.portal.aop.AopService;
-
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.model.Group;
@@ -32,7 +30,6 @@ import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import org.osgi.service.component.annotations.Component;
 
@@ -50,7 +47,7 @@ public class AfterSalesRequestLocalServiceImpl
       type = IndexableType.REINDEX
   )
   public AfterSalesRequest addAfterSalesRequest(String title, String description,
-      ServiceContext serviceContext)
+      long commerceOrderId, ServiceContext serviceContext)
       throws PortalException {
 
     long groupId = serviceContext.getScopeGroupId();
@@ -67,6 +64,7 @@ public class AfterSalesRequestLocalServiceImpl
     afterSalesRequest.setUserId(userId);
     afterSalesRequest.setTitle(title);
     afterSalesRequest.setDescription(description);
+    afterSalesRequest.setCommerceOrderId(commerceOrderId);
 
     afterSalesRequest.setStatus(WorkflowConstants.STATUS_DRAFT);
     afterSalesRequest.setStatusByUserId(userId);
@@ -97,8 +95,7 @@ public class AfterSalesRequestLocalServiceImpl
       type = IndexableType.REINDEX
   )
   public AfterSalesRequest updateAfterSalesRequest(long afterSalesRequestId, String title,
-      String description,
-      Date dueDate, ServiceContext serviceContext)
+      String description, long commerceOrderId, ServiceContext serviceContext)
       throws PortalException {
 
     AfterSalesRequest afterSalesRequest = getAfterSalesRequest(afterSalesRequestId);
@@ -106,6 +103,7 @@ public class AfterSalesRequestLocalServiceImpl
     afterSalesRequest.setModifiedDate(new Date());
     afterSalesRequest.setTitle(title);
     afterSalesRequest.setDescription(description);
+    afterSalesRequest.setCommerceOrderId(commerceOrderId);
 
     afterSalesRequest = super.updateAfterSalesRequest(afterSalesRequest);
 

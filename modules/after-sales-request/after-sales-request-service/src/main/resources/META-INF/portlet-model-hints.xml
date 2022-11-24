@@ -16,5 +16,6 @@
 		<field name="statusDate" type="Date" />
 		<field name="title" type="String" />
 		<field name="description" type="String" />
+		<field name="commerceOrderId" type="long" />
 	</model>
 </model-hints>

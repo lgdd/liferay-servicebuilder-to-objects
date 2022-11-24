@@ -51,7 +51,8 @@ public interface AfterSalesRequestService extends BaseService {
 	 * Never modify this interface directly. Add custom service methods to <code>com.github.lgdd.liferay.commerce.after.sales.request.service.impl.AfterSalesRequestServiceImpl</code> and rerun ServiceBuilder to automatically copy the method declarations to this interface. Consume the after sales request remote service via injection or a <code>org.osgi.util.tracker.ServiceTracker</code>. Use {@link AfterSalesRequestServiceUtil} if injection and service tracking are not available.
 	 */
 	public AfterSalesRequest addAfterSalesRequest(
-			String title, String description, ServiceContext serviceContext)
+			String title, String description, long commerceOrderId,
+			ServiceContext serviceContext)
 		throws PortalException;
 
 	public AfterSalesRequest deleteAfterSalesRequest(long afterSalesRequestId)

@@ -12,5 +12,6 @@ create table DEV24_AfterSalesRequest (
 	statusByUserName VARCHAR(75) null,
 	statusDate DATE null,
 	title VARCHAR(75) null,
-	description VARCHAR(75) null
+	description VARCHAR(75) null,
+	commerceOrderId LONG
 );

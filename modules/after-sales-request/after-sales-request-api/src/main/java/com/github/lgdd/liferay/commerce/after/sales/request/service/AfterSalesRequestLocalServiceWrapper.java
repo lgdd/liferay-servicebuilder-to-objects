@@ -58,13 +58,13 @@ public class AfterSalesRequestLocalServiceWrapper
 	public
 		com.github.lgdd.liferay.commerce.after.sales.request.model.
 			AfterSalesRequest addAfterSalesRequest(
-					String title, String description,
+					String title, String description, long commerceOrderId,
 					com.liferay.portal.kernel.service.ServiceContext
 						serviceContext)
 				throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _afterSalesRequestLocalService.addAfterSalesRequest(
-			title, description, serviceContext);
+			title, description, commerceOrderId, serviceContext);
 	}
 
 	/**
@@ -456,13 +456,14 @@ public class AfterSalesRequestLocalServiceWrapper
 		com.github.lgdd.liferay.commerce.after.sales.request.model.
 			AfterSalesRequest updateAfterSalesRequest(
 					long afterSalesRequestId, String title, String description,
-					java.util.Date dueDate,
+					long commerceOrderId,
 					com.liferay.portal.kernel.service.ServiceContext
 						serviceContext)
 				throws com.liferay.portal.kernel.exception.PortalException {
 
 		return _afterSalesRequestLocalService.updateAfterSalesRequest(
-			afterSalesRequestId, title, description, dueDate, serviceContext);
+			afterSalesRequestId, title, description, commerceOrderId,
+			serviceContext);
 	}
 
 	@Override

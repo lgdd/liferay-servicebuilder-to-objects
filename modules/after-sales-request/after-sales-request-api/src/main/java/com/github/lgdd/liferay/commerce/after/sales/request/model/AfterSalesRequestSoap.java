@@ -47,6 +47,7 @@ public class AfterSalesRequestSoap implements Serializable {
 		soapModel.setStatusDate(model.getStatusDate());
 		soapModel.setTitle(model.getTitle());
 		soapModel.setDescription(model.getDescription());
+		soapModel.setCommerceOrderId(model.getCommerceOrderId());
 
 		return soapModel;
 	}
@@ -220,6 +221,14 @@ public class AfterSalesRequestSoap implements Serializable {
 		_description = description;
 	}
 
+	public long getCommerceOrderId() {
+		return _commerceOrderId;
+	}
+
+	public void setCommerceOrderId(long commerceOrderId) {
+		_commerceOrderId = commerceOrderId;
+	}
+
 	private String _uuid;
 	private long _afterSalesRequestId;
 	private long _groupId;
@@ -234,5 +243,6 @@ public class AfterSalesRequestSoap implements Serializable {
 	private Date _statusDate;
 	private String _title;
 	private String _description;
+	private long _commerceOrderId;
 
 }

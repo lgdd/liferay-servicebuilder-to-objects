@@ -56,7 +56,7 @@ public class AfterSalesRequestServiceHttp {
 		com.github.lgdd.liferay.commerce.after.sales.request.model.
 			AfterSalesRequest addAfterSalesRequest(
 					HttpPrincipal httpPrincipal, String title,
-					String description,
+					String description, long commerceOrderId,
 					com.liferay.portal.kernel.service.ServiceContext
 						serviceContext)
 				throws com.liferay.portal.kernel.exception.PortalException {
@@ -67,7 +67,7 @@ public class AfterSalesRequestServiceHttp {
 				_addAfterSalesRequestParameterTypes0);
 
 			MethodHandler methodHandler = new MethodHandler(
-				methodKey, title, description, serviceContext);
+				methodKey, title, description, commerceOrderId, serviceContext);
 
 			Object returnObj = null;
 
@@ -146,7 +146,7 @@ public class AfterSalesRequestServiceHttp {
 
 	private static final Class<?>[] _addAfterSalesRequestParameterTypes0 =
 		new Class[] {
-			String.class, String.class,
+			String.class, String.class, long.class,
 			com.liferay.portal.kernel.service.ServiceContext.class
 		};
 	private static final Class<?>[] _deleteAfterSalesRequestParameterTypes1 =
