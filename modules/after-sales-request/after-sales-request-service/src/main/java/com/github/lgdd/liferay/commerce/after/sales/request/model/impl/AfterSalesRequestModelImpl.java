@@ -16,6 +16,7 @@ package com.github.lgdd.liferay.commerce.after.sales.request.model.impl;
 
 import com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequest;
 import com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequestModel;
+import com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequestSoap;
 
 import com.liferay.expando.kernel.model.ExpandoBridge;
 import com.liferay.expando.kernel.util.ExpandoBridgeFactoryUtil;
@@ -23,6 +24,7 @@ import com.liferay.exportimport.kernel.lar.StagedModelType;
 import com.liferay.petra.string.StringBundler;
 import com.liferay.portal.kernel.bean.AutoEscapeBeanHandler;
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.json.JSON;
 import com.liferay.portal.kernel.model.CacheModel;
 import com.liferay.portal.kernel.model.ModelWrapper;
 import com.liferay.portal.kernel.model.User;
@@ -43,10 +45,12 @@ import java.lang.reflect.InvocationHandler;
 import java.sql.Blob;
 import java.sql.Types;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiConsumer;
@@ -63,6 +67,7 @@ import java.util.function.Function;
  * @see AfterSalesRequestImpl
  * @generated
  */
+@JSON(strict = true)
 public class AfterSalesRequestModelImpl
 	extends BaseModelImpl<AfterSalesRequest> implements AfterSalesRequestModel {
 
@@ -164,6 +169,64 @@ public class AfterSalesRequestModelImpl
 	 */
 	@Deprecated
 	public static void setFinderCacheEnabled(boolean finderCacheEnabled) {
+	}
+
+	/**
+	 * Converts the soap model instance into a normal model instance.
+	 *
+	 * @param soapModel the soap model instance to convert
+	 * @return the normal model instance
+	 * @deprecated As of Athanasius (7.3.x), with no direct replacement
+	 */
+	@Deprecated
+	public static AfterSalesRequest toModel(AfterSalesRequestSoap soapModel) {
+		if (soapModel == null) {
+			return null;
+		}
+
+		AfterSalesRequest model = new AfterSalesRequestImpl();
+
+		model.setUuid(soapModel.getUuid());
+		model.setAfterSalesRequestId(soapModel.getAfterSalesRequestId());
+		model.setGroupId(soapModel.getGroupId());
+		model.setCompanyId(soapModel.getCompanyId());
+		model.setUserId(soapModel.getUserId());
+		model.setUserName(soapModel.getUserName());
+		model.setCreateDate(soapModel.getCreateDate());
+		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setStatus(soapModel.getStatus());
+		model.setStatusByUserId(soapModel.getStatusByUserId());
+		model.setStatusByUserName(soapModel.getStatusByUserName());
+		model.setStatusDate(soapModel.getStatusDate());
+		model.setTitle(soapModel.getTitle());
+		model.setDescription(soapModel.getDescription());
+
+		return model;
+	}
+
+	/**
+	 * Converts the soap model instances into normal model instances.
+	 *
+	 * @param soapModels the soap model instances to convert
+	 * @return the normal model instances
+	 * @deprecated As of Athanasius (7.3.x), with no direct replacement
+	 */
+	@Deprecated
+	public static List<AfterSalesRequest> toModels(
+		AfterSalesRequestSoap[] soapModels) {
+
+		if (soapModels == null) {
+			return null;
+		}
+
+		List<AfterSalesRequest> models = new ArrayList<AfterSalesRequest>(
+			soapModels.length);
+
+		for (AfterSalesRequestSoap soapModel : soapModels) {
+			models.add(toModel(soapModel));
+		}
+
+		return models;
 	}
 
 	public AfterSalesRequestModelImpl() {
@@ -375,6 +438,7 @@ public class AfterSalesRequestModelImpl
 			(Map)attributeSetterBiConsumers);
 	}
 
+	@JSON
 	@Override
 	public String getUuid() {
 		if (_uuid == null) {
@@ -403,6 +467,7 @@ public class AfterSalesRequestModelImpl
 		return getColumnOriginalValue("uuid_");
 	}
 
+	@JSON
 	@Override
 	public long getAfterSalesRequestId() {
 		return _afterSalesRequestId;
@@ -417,6 +482,7 @@ public class AfterSalesRequestModelImpl
 		_afterSalesRequestId = afterSalesRequestId;
 	}
 
+	@JSON
 	@Override
 	public long getGroupId() {
 		return _groupId;
@@ -440,6 +506,7 @@ public class AfterSalesRequestModelImpl
 		return GetterUtil.getLong(this.<Long>getColumnOriginalValue("groupId"));
 	}
 
+	@JSON
 	@Override
 	public long getCompanyId() {
 		return _companyId;
@@ -464,6 +531,7 @@ public class AfterSalesRequestModelImpl
 			this.<Long>getColumnOriginalValue("companyId"));
 	}
 
+	@JSON
 	@Override
 	public long getUserId() {
 		return _userId;
@@ -494,6 +562,7 @@ public class AfterSalesRequestModelImpl
 	public void setUserUuid(String userUuid) {
 	}
 
+	@JSON
 	@Override
 	public String getUserName() {
 		if (_userName == null) {
@@ -513,6 +582,7 @@ public class AfterSalesRequestModelImpl
 		_userName = userName;
 	}
 
+	@JSON
 	@Override
 	public Date getCreateDate() {
 		return _createDate;
@@ -527,6 +597,7 @@ public class AfterSalesRequestModelImpl
 		_createDate = createDate;
 	}
 
+	@JSON
 	@Override
 	public Date getModifiedDate() {
 		return _modifiedDate;
@@ -547,6 +618,7 @@ public class AfterSalesRequestModelImpl
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
 	@Override
 	public int getStatus() {
 		return _status;
@@ -571,6 +643,7 @@ public class AfterSalesRequestModelImpl
 			this.<Integer>getColumnOriginalValue("status"));
 	}
 
+	@JSON
 	@Override
 	public long getStatusByUserId() {
 		return _statusByUserId;
@@ -601,6 +674,7 @@ public class AfterSalesRequestModelImpl
 	public void setStatusByUserUuid(String statusByUserUuid) {
 	}
 
+	@JSON
 	@Override
 	public String getStatusByUserName() {
 		if (_statusByUserName == null) {
@@ -620,6 +694,7 @@ public class AfterSalesRequestModelImpl
 		_statusByUserName = statusByUserName;
 	}
 
+	@JSON
 	@Override
 	public Date getStatusDate() {
 		return _statusDate;
@@ -634,6 +709,7 @@ public class AfterSalesRequestModelImpl
 		_statusDate = statusDate;
 	}
 
+	@JSON
 	@Override
 	public String getTitle() {
 		if (_title == null) {
@@ -653,6 +729,7 @@ public class AfterSalesRequestModelImpl
 		_title = title;
 	}
 
+	@JSON
 	@Override
 	public String getDescription() {
 		if (_description == null) {

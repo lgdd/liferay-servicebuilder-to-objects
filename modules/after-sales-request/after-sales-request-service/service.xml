@@ -6,7 +6,7 @@
   package-path="com.github.lgdd.liferay.commerce.after.sales.request">
 
   <namespace>DEV24</namespace>
-  <entity name="AfterSalesRequest" local-service="true" remote-service="false" uuid="true">
+  <entity name="AfterSalesRequest" local-service="true" remote-service="true" uuid="true">
 
     <!-- PK fields -->
     <column name="afterSalesRequestId" primary="true" type="long"/>
