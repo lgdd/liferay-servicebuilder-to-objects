@@ -59,7 +59,7 @@ public class AfterSalesRequestLocalServiceImpl
 
     AfterSalesRequest afterSalesRequest = createAfterSalesRequest(afterSalesRequestId);
 
-    afterSalesRequest.setCompanyId(groupId);
+    afterSalesRequest.setCompanyId(serviceContext.getCompanyId());
     afterSalesRequest.setGroupId(serviceContext.getScopeGroupId());
     afterSalesRequest.setUserId(userId);
     afterSalesRequest.setTitle(title);
