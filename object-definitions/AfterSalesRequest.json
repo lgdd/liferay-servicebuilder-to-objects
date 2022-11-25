@@ -1,0 +1,194 @@
+{
+  "enableComments": false,
+  "objectRelationships": [],
+  "accountEntryRestrictedObjectFieldId": 0,
+  "enableCategorization": true,
+  "objectActions": [],
+  "accountEntryRestricted": false,
+  "externalReferenceCode": "b301ae31-774b-6443-8323-fbe2a5562533",
+  "objectFields": [
+    {
+      "indexed": false,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "Date",
+      "label": {
+        "en_US": "Create Date"
+      },
+      "type": "Date",
+      "required": false,
+      "externalReferenceCode": "67e534c7-72e0-9fc4-e7d9-4d8aff518aad",
+      "indexedAsKeyword": false,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "createDate",
+      "state": false,
+      "businessType": "Date"
+    },
+    {
+      "indexed": false,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "String",
+      "label": {
+        "en_US": "Author"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "f1576cbf-5a7e-dd13-393d-7b3260579108",
+      "indexedAsKeyword": false,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "creator",
+      "state": false,
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "",
+      "objectFieldSettings": [
+        {
+          "name": "showCounter",
+          "value": "false"
+        }
+      ],
+      "DBType": "String",
+      "label": {
+        "en_US": "Description"
+      },
+      "type": "String",
+      "required": true,
+      "externalReferenceCode": "e7fd022d-595b-2f67-f537-ce5adf8bfda4",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "en_US",
+      "name": "description",
+      "state": false,
+      "businessType": "Text"
+    },
+    {
+      "indexed": false,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "String",
+      "label": {
+        "en_US": "External Reference Code"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "6e36bf1b-d7d8-b82e-55d7-a3a8b3ba25fc",
+      "indexedAsKeyword": false,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "externalReferenceCode",
+      "state": false,
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "Long",
+      "label": {
+        "en_US": "ID"
+      },
+      "type": "Long",
+      "required": false,
+      "externalReferenceCode": "b404d6e3-7ece-78ee-391c-cb947428c971",
+      "indexedAsKeyword": true,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "id",
+      "state": false,
+      "businessType": "LongInteger"
+    },
+    {
+      "indexed": false,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "Date",
+      "label": {
+        "en_US": "Modified Date"
+      },
+      "type": "Date",
+      "required": false,
+      "externalReferenceCode": "72847e45-f13d-fb72-a45b-16d5a5774d84",
+      "indexedAsKeyword": false,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "modifiedDate",
+      "state": false,
+      "businessType": "Date"
+    },
+    {
+      "indexed": false,
+      "defaultValue": "",
+      "objectFieldSettings": [],
+      "DBType": "String",
+      "label": {
+        "en_US": "Status"
+      },
+      "type": "String",
+      "required": false,
+      "externalReferenceCode": "ee866beb-5c18-afaf-044a-7f5ed582cefb",
+      "indexedAsKeyword": false,
+      "system": true,
+      "indexedLanguageId": "",
+      "name": "status",
+      "state": false,
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "",
+      "objectFieldSettings": [
+        {
+          "name": "showCounter",
+          "value": "false"
+        }
+      ],
+      "DBType": "String",
+      "label": {
+        "en_US": "Title"
+      },
+      "type": "String",
+      "required": true,
+      "externalReferenceCode": "49efaac5-09a3-18cb-1026-2f426c504a18",
+      "indexedAsKeyword": false,
+      "system": false,
+      "indexedLanguageId": "en_US",
+      "name": "title",
+      "state": false,
+      "businessType": "Text"
+    }
+  ],
+  "restContextPath": "/o/c/aftersalesrequests",
+  "scope": "site",
+  "portlet": false,
+  "parameterRequired": false,
+  "enableObjectEntryHistory": false,
+  "titleObjectFieldName": "title",
+  "active": true,
+  "label": {
+    "en_US": "After Sales Request"
+  },
+  "panelCategoryKey": "site_administration.content",
+  "pluralLabel": {
+    "en_US": "After Sales Requests"
+  },
+  "objectLayouts": [],
+  "system": false,
+  "objectViews": [],
+  "name": "AfterSalesRequest",
+  "actions": {
+    "permissions": {},
+    "get": {},
+    "update": {},
+    "delete": {}
+  },
+  "status": {
+    "label_i18n": "Approved",
+    "code": 0,
+    "label": "approved"
+  }
+}
