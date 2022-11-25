@@ -4,7 +4,7 @@
   <model-resource>
     <model-name>com.github.lgdd.liferay.commerce.after.sales.request.model</model-name>
     <portlet-ref>
-      <portlet-name>com_github_lgdd_liferay_commerce_after_sales_request_portlet_AfterSalesRequestPortlet</portlet-name>
+      <portlet-name>com_github_lgdd_liferay_commerce_after_sales_request_web_AfterSalesRequestPortlet</portlet-name>
     </portlet-ref>
     <permissions>
       <supports>
@@ -22,7 +22,7 @@
   <model-resource>
     <model-name>com.github.lgdd.liferay.commerce.after.sales.request.model.AfterSalesRequest</model-name>
     <portlet-ref>
-      <portlet-name>com_github_lgdd_liferay_commerce_after_sales_request_portlet_AfterSalesRequestPortlet</portlet-name>
+      <portlet-name>com_github_lgdd_liferay_commerce_after_sales_request_web_AfterSalesRequestPortlet</portlet-name>
     </portlet-ref>
     <permissions>
       <supports>
