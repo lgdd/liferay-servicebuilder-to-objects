@@ -1183,7 +1183,6 @@ public class AfterSalesRequestModelImpl
 		return sb.toString();
 	}
 
-	@Override
 	public String toXmlString() {
 		Map<String, Function<AfterSalesRequest, Object>>
 			attributeGetterFunctions = getAttributeGetterFunctions();
